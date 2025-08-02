@@ -1,7 +1,6 @@
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
 import json
-import os
 
 api_id = 28345038
 api_hash = '6c438bbc256629655ca14d4f74de0541'
@@ -12,10 +11,9 @@ TARGET_USERNAME = 'GoldTraderJisan'
 def handler(request):
     try:
         messages_data = []
-
         with TelegramClient(StringSession(string_session), api_id, api_hash) as client:
             entity = client.get_entity(TARGET_USERNAME)
-            for message in client.iter_messages(entity, limit=100):
+            for message in client.iter_messages(entity, limit=50):
                 messages_data.append({
                     "id": message.id,
                     "from": message.sender_id,
