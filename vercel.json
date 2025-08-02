@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "functions": {
+    "api/messages.py": {
+      "runtime": "python3.9"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/messages",
+      "dest": "api/messages.py"
+    }
+  ]
+}
